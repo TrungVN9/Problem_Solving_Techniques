@@ -27,9 +27,7 @@ def check_anagram(s: str, t: str) -> bool:
     for index in range(len(s)):
         hash_map_s[s[index]] = 1 + hash_map_s.get(s[index], 0) #if s[index] in hash_map_s
         hash_map_t[t[index]] = 1 + hash_map_t.get(t[index], 0)
-   
-    if (hash_map_t == hash_map_s):
-        return True
-    return False
+
+    return hash_map_t == hash_map_s
 # check_anagram("anagram", "nagaram")
 print(check_anagram("anagram", "nagaram"))

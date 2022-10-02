@@ -30,4 +30,31 @@ def check_anagram(s: str, t: str) -> bool:
 
     return hash_map_t == hash_map_s
 # check_anagram("anagram", "nagaram")
-print(check_anagram("anagram", "nagaram"))
+# print(check_anagram("anagram", "nagaram"))
+
+'''
+    Group Anagram
+    Given an array of strings strs, group the anagrams together. 
+    You can return the answer in any order.
+
+    Input: strs = ["eat","tea","tan","ate","nat","bat"]
+    Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+    
+    Input: strs = [""]
+    Output: [[""]]
+    
+    Input: strs = ["a"]
+    Output: [["a"]]
+
+    Thought Process:
+    1. Implement exactly check anagram -> to count the number of chars appear in the str
+    2. 
+'''
+# def group_anagram(strs: list[str]) -> list[list[str]]:
+def group_anagram(strs: list[str]):
+    hash_map_strs = {}
+    for word in strs:
+        for index in range(len(word)):
+            hash_map_strs[word[index]] = 1 + hash_map_strs.get(word[index], 0)
+    print(hash_map_strs)
+group_anagram(["eat","tea","tan","ate","nat","bat"])
